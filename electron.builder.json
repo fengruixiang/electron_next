@@ -1,0 +1,45 @@
+{
+    "appId": "120210",
+    "asar": true,
+    "productName": "中交新建",
+    "directories": {
+      "output": "release"
+    },
+    "files": ["electron/main.js", ".next", "electron/preload.js"],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "${productName}-Mac-120210-Installer.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-Windows-120210-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "artifactName": "${productName}-Linux-120202.${ext}"
+    }
+  }
+  
